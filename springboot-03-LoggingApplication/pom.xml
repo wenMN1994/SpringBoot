@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -10,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springboot-02-properties</artifactId>
+    <artifactId>springboot-03-LoggingApplication</artifactId>
 
     <dependencies>
         <dependency>
@@ -18,18 +17,33 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--spring-boot-starter-web 中引入了 spring-boot-starter 启动器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>2.0.6.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--spring-boot-starter 中引入了 spring-boot-starter-logging 日志启动器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
+
+        <!--spring-boot-starter-logging 日志启动器 采用的是 logback 日志框架-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+            <scope>compile</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!--导入配置文件处理器，在编写配置文件时就会提示-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-
     </dependencies>
 
     <build>
@@ -40,5 +54,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

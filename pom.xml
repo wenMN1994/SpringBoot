@@ -11,6 +11,7 @@
     <modules>
         <module>springboot-01-hello</module>
         <module>springboot-02-properties</module>
+        <module>springboot-03-LoggingApplication</module>
     </modules>
 
 
