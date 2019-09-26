@@ -66,5 +66,19 @@
     <hr/>
     <div th:text="${desc}"> </div>
     <div th:utext="${desc}"> </div>
+
+    <hr/>
+    <input type="checkbox" /> [[${desc}]]
+    <p>Hello, [[${desc}]] 。。。</p>
+
+    <!--使用th:object 直接取出对象，然后写对象里的属性名即可获取属性值-->
+    <div th:object="${session.user}">
+        <p>
+            姓名:<span th:text="*{username}">xxxx</span>
+        </p>
+        <p>
+            性别:<span th:text="*{gender == 1 ? '女' : '男'}">xxxx</span>
+        </p>
+    </div>
 </body>
 </html>

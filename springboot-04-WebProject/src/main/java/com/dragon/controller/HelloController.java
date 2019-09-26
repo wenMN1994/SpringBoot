@@ -31,6 +31,7 @@ public class HelloController {
         map.put("man", 2);
         // th:text th:utext
         map.put("desc", "欢迎来到<h1>DragonWen个人中心<h1>");
+        request.getSession().setAttribute("user", new User("小不点", 2));
         return "study";
     }
 }
