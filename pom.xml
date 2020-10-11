@@ -9,10 +9,11 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>springboot-01-hello</module>
-        <module>springboot-02-properties</module>
-        <module>springboot-03-LoggingApplication</module>
-        <module>springboot-04-WebProject</module>
+        <module>spring-boot-01-hello</module>
+        <module>spring-boot-01-hello-init</module>
+        <module>spring-boot-02-config</module>
+        <module>spring-boot-03-logging</module>
+        <module>spring-boot-04-web</module>
     </modules>
 
 
