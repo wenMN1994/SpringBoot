@@ -3,6 +3,9 @@ package com.dragon.springboot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author DragonWen
+ */
 @SpringBootApplication
 public class SpringBoot01HelloInitApplication {
 

@@ -1,37 +1,54 @@
 package com.dragon.springboot.controller;
 
-import com.dragon.springboot.domain.User;
+import com.dragon.springboot.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+
 /**
- * @author：Dragon Wen
- * @email：18475536452@163.com
- * @date：Created in 2019/9/20 16:01
- * @description：
- * @modified By：
- * @version: $
+ * @author DragonWen
  */
 @Controller
 public class HelloController {
+
+    @ResponseBody
+    @RequestMapping("/sucsess")
+    public String execute() {
+        return "hello DragonWen";
+    }
+
+    @RequestMapping( {"/execute"} )
+    public String success(Map<String, Object> map) {
+        map.put("name", "DragonWen");
+        //classpath:/templates/success.html
+        return "success";
+    }
+
     @RequestMapping("/study")
     public String study(Map<String, Object> map, HttpServletRequest request) {
         List<User> userList = new ArrayList<>();
-        userList.add(new User("小梦", 1));
+        userList.add(new User("小温", 1));
         userList.add(new User("小李", 2));
         userList.add(new User("小张", 1));
+
         map.put("userList", userList);
-        // 1女, 2男
-        map.put("sex", 1);
-        map.put("man", 2);
-        // th:text th:utext
-        map.put("desc", "欢迎来到<h1>DragonWen个人中心<h1>");
-        request.getSession().setAttribute("user", new User("小不点", 2));
+
+        //1 女， 2 男
+        map.put("sex", 2);//
+        map.put("man", 2);//
+
+        map.put("desc", "欢迎来到<h1>DragonWen</h1>");
+
+        //将user对象绑定到session中
+        request.getSession().setAttribute("user", new User("小刘", 2));
+
         return "study";
     }
+
 }

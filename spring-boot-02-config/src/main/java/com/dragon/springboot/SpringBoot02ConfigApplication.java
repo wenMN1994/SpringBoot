@@ -2,17 +2,17 @@ package com.dragon.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ImportResource;
 
 /**
- * @author：Dragon Wen
- * @email：18475536452@163.com
- * @date：Created in 2019/9/16 13:57
- * @description：springboot配置文件学习
- * @modified By：
- * @version: $
+ * @author DragonWen
+ * @ImportResource(locations = {"classpath:spring01.xml"})
+ *  用于导入spring的配置文件，并将它加载到容器中
  */
+//@ImportResource(locations = {"classpath:spring01.xml"})
 @SpringBootApplication
 public class SpringBoot02ConfigApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(SpringBoot02ConfigApplication.class, args);
     }

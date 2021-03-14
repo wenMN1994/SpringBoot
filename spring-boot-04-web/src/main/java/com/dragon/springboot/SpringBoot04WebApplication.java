@@ -2,18 +2,31 @@ package com.dragon.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.View;
+import org.springframework.web.servlet.ViewResolver;
+
+import java.util.Locale;
 
 /**
- * @author：Dragon Wen
- * @email：18475536452@163.com
- * @date：Created in 2019/9/19 16:10
- * @description：
- * @modified By：
- * @version: $
+ * @author DragonWen
  */
 @SpringBootApplication
 public class SpringBoot04WebApplication {
-    public static void main(String[] args){
-        SpringApplication.run(WebProjectApplication.class);
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBoot04WebApplication.class, args);
+    }
+
+    @Bean
+    public ViewResolver myViewResolver() {
+        return new MyViewResolver();
+    }
+
+    class MyViewResolver implements ViewResolver{
+        @Override
+        public View resolveViewName(String s, Locale locale) throws Exception {
+            return null;
+        }
     }
 }

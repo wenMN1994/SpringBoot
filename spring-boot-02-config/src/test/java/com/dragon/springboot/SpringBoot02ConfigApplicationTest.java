@@ -1,10 +1,12 @@
 package com.dragon.springboot;
 
-import com.dragon.springboot.domain.Emp;
+import com.dragon.springboot.bean.Emp;
+import com.dragon.springboot.service.EmpService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -23,6 +25,20 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SpringBoot02ConfigApplicationTest {
     @Autowired
     Emp emp;
+
+    @Autowired
+    ApplicationContext context;
+
+    @Test
+    public void testXml() {
+//        EmpService empService = (EmpService) context.getBean("empService");
+//        System.out.println(empService);
+//        empService.add();
+
+        EmpService empService2 = (EmpService)context.getBean("empService2");
+        System.out.println("empService2: " + empService2);
+    }
+
     @Test
     public void contextLoads() {
         System.out.println(emp);

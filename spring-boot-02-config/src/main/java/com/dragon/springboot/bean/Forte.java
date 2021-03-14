@@ -1,16 +1,20 @@
-package com.dragon.springboot.domain;
+package com.dragon.springboot.bean;
 
 /**
- * @author：Dragon Wen
- * @email：18475536452@163.com
- * @date：Created in 2019/9/16 14:14
- * @description：
- * @modified By：
- * @version: $
+ *
+ * @author DragonWen
  */
 public class Forte {
     private String name;
     private Integer time;
+
+    @Override
+    public String toString() {
+        return "Forte{" +
+                "name='" + name + '\'' +
+                ", time=" + time +
+                '}';
+    }
 
     public String getName() {
         return name;
